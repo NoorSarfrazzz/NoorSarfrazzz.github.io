@@ -1,12 +1,10 @@
-/* Reset some default styles */
+/* --------------------- */
+/* Reset & Base Styles */
+/* --------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-nav {
-  padding: 15px;
 }
 
 body {
@@ -19,6 +17,17 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --------------------- */
+/* Header & Navigation */
+/* --------------------- */
 header {
   background: #0052cc;
   color: white;
@@ -27,7 +36,6 @@ header {
 }
 
 header nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -36,7 +44,6 @@ header nav ul {
 
 header nav ul li a {
   color: white;
-  text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -45,41 +52,20 @@ header nav ul li a:hover {
   color: #ffcc00;
 }
 
-.header-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-bottom: 10px;
-  object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-h1 {
+.header-content h1 {
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 2.8rem;
 }
 
-.title {
+.header-content .title {
   font-weight: 300;
   font-size: 1.2rem;
 }
 
-.education-entry .title{
-    font-weight: 550;
-  font-size: 1.2rem;
-}
-.experience-entry .title{
-    font-weight: 510;
-  font-size: 1.2rem;
-}
-
+/* --------------------- */
+/* Main Sections */
+/* --------------------- */
 main {
   flex-grow: 1;
   max-width: 900px;
@@ -102,11 +88,13 @@ h2 {
   padding-bottom: 6px;
 }
 
+/* --------------------- */
+/* Skills Section */
+/* --------------------- */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  list-style: none;
 }
 
 .skills-list li {
@@ -124,6 +112,9 @@ h2 {
   background: #003d99;
 }
 
+/* --------------------- */
+/* Projects Section */
+/* --------------------- */
 .project-card {
   background: #e6f0ff;
   border-radius: 8px;
@@ -162,29 +153,50 @@ h2 {
   background: #003d99;
 }
 
-#contact a {
-  color: #0052cc;
-  text-decoration: none;
-  font-weight: 600;
+/* --------------------- */
+/* Achievements Section */
+/* --------------------- */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-#contact a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  background: #003d99;
-  color: white;
+.achievement-card {
+  background: #e6f0ff;
+  border-radius: 8px;
+  padding: 10px;
   text-align: center;
-  padding: 15px 0;
-  font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgb(0 82 204 / 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Tabs styles - always active on all screen sizes */
+.achievement-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.achievement-card p {
+  font-weight: 600;
+  color: #003d99;
+  font-size: 1rem;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --------------------- */
+/* Tabs Styles */
+/* --------------------- */
 .tabs {
   margin-bottom: 1em;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tab-button {
@@ -214,7 +226,38 @@ footer {
   display: block;
 }
 
+/* --------------------- */
+/* Contact Section */
+/* --------------------- */
+#contact a {
+  color: #0052cc;
+  font-weight: 600;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------- */
+/* Footer */
+/* --------------------- */
+footer {
+  background: #003d99;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* --------------------- */
 /* Responsive Design */
+/* --------------------- */
+@media (max-width: 900px) {
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   header nav ul {
     flex-direction: column;
@@ -228,46 +271,43 @@ footer {
   .tabs {
     flex-direction: column;
   }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* --------------------- */
+/* Education Section */
+/* --------------------- */
+#education .item {
+  margin-bottom: 20px;
 }
 
-/* --------------------------- */
-/* Education & Certifications */
-/* --------------------------- */
-
-/* Unified Style for Education, Certifications & Experience */
-.education-entry,
-.certification-entry,
-.experience-entry {
-  background: #ffffff; /* Match section-container background */
-  padding: 25px 30px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same as section-container */
-  /* border-left: 5px solid #0052cc; Add visual accent like other cards */
-}
-
-.education-entry h3,
-.certification-entry h3,
-.experience-entry h3 {
+#education .title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 8px;
-  color: #0052cc;
+  color: #003d99;
 }
 
-.education-entry p,
-.certification-entry p,
-.experience-entry p {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 8px;
-  line-height: 1.6;
+#education-entry .sub-title {
+  display: flex;
+  justify-content: space-between; /* Degree left, date right */
+  align-items: center;
 }
-
-.education-entry span,
-.certification-entry span,
-.experience-entry span {
-  display: block;
+#education-entry .sub-title .degree {}
+#education-entry .sub-title .date {
   font-size: 0.9rem;
   color: #666;
+  font-weight: 400;
+}
+
+#education p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+#education strong {
+  color: #0052cc; /* Highlight Gold Medalist */
 }

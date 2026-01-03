@@ -19,10 +19,10 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
-          <!-- <li><a href="#education">Education</a></li> -->
+          <li><a href="#education">Education</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <!-- <li><a href="#expereince">Professional Experience</a></li> -->
+          <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -50,27 +50,18 @@
         </p>
       </section>
 
-      <div class="container">
-        <!-- <div class="education-entry">
-      <h2>Education</h2>
-      <div class="item">
-        <div class="title">National Textile University</div>
-        <div class="sub-title">BS - Software Engineering <span class="date">2021 - 2025</span></div>
-        <div class="clear"></div>
-        <p>CGPA: 3.97</p>
-      </div>
-      <div class="item">
-        <div class="title">Punjab College for Women</div>
-        <div class="sub-title">FSc - Pre Medical <span class="date">2018 - 2020</span></div>
-        <div class="clear"></div>
-        <p>Percentage: 91%</p>
-      </div>
-      <div class="item">
-        <div class="title">Chiniot Islamia School & College</div>
-        <div class="sub-title">Matriculation</div>
-        <p>Percentage: 97%</p>
-      </div>
-    </div> -->
+<section id="education" class="section-container">
+  <h2>Education</h2>
+
+  <div class="item">
+    <div class="title">National Textile University</div>
+    <div class="sub-title">
+      <span class="degree">Bachelor in Software Engineering</span>
+      <span class="date">2021 - 2025</span>
+    </div>
+    <p>CGPA: 3.97 - <strong>Gold Medalist</strong></p>
+  </div>
+</section>
 
         <section id="skills" class="section-container">
           <h2>Skills</h2>
@@ -297,50 +288,108 @@
     </div> -->
       </div>
 
-      <section id="contact" class="section-container">
-        <h2>Contact Me</h2>
-        <p>Contact#: <a href="tel:+923013666203">03013666203</a></p>
-        <p>
-          Email:
-          <a href="mahnoor.sarfraz20@gmail.com">mahnoor.sarfraz20@gmail.com</a>
-        </p>
-        <p>
-          LinkedIn:
-          <a
-            href="https://www.linkedin.com/in/mahnoor-sarfraz-988a81283"
-            target="_blank"
-            >linkedin.com/in/mahnoor-sarfraz</a
-          >
-        </p>
-        <p>
-          GitHub:
-          <a href="https://github.com/NoorSarfrazzz" target="_blank"
-            >github.com/NoorSarfrazzz</a
-          >
-        </p>
-      </section>
-    </main>
+     <!-- Achievements Section -->
+  <section id="achievements" class="section-container">
+    <h2>Achievements</h2>
 
-    <footer>
-      <p>© 2025 Mahnoor. All rights reserved.</p>
-    </footer>
+    <div class="tabs">
+      <button class="tab-button active" onclick="showAch('internships', event)">Internships</button>
+      <button class="tab-button" onclick="showAch('academics', event)">Academics</button>
+      <button class="tab-button" onclick="showAch('workshops', event)">Workshops</button>
+      <button class="tab-button" onclick="showAch('leadership', event)">Leadership & Management</button>
+    </div>
 
-    <script>
-      function showTab(tabId) {
-        // Remove active class from all buttons and tab contents
-        document
-          .querySelectorAll(".tab-button")
-          .forEach((btn) => btn.classList.remove("active"));
-        document
-          .querySelectorAll(".tab-content")
-          .forEach((content) => content.classList.remove("active"));
+    <div id="internships" class="tab-content active">
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <img src="images/certifcate hive & tutor .png" alt="Internship 1">
+          <p>Tech Hive Technologies</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/techpediaaa.png" alt="Internship 2">
+          <p>TechPedia Company</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/codealpha.png" alt="Internship 3">
+          <p>CodeAlpha</p>
+        </div>
+      </div>
+    </div>
 
-        // Add active class to the clicked button and its tab content
-        document
-          .querySelector(`.tab-button[onclick="showTab('${tabId}')"]`)
-          .classList.add("active");
-        document.getElementById(tabId).classList.add("active");
-      }
-    </script>
-  </body>
+    <div id="academics" class="tab-content">
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <img src="images/NFTP.jpg" alt="Academic 1">
+          <p>NFTP</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/clientneeds.png" alt="Academic 2">
+          <p>Client Needs and Software Requirements</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/sql.png" alt="Academic 3">
+          <p>The Structured Query Language (SQL)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="workshops" class="tab-content">
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <img src="images/github.jpg" alt="Workshop 1">
+          <p>GitHub Workshop</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="leadership" class="tab-content">
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <img src="images/PC.jpg" alt="Leadership 1">
+          <p>President - NTU Cyber Security Student Club</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/apbc.jpg" alt="Leadership 2">
+          <p>Team Executive - APBPC'25</p>
+        </div>
+        <div class="achievement-card">
+          <img src="images/SE.jpg" alt="Leadership 3">
+          <p>Senior Girls Coordinator - NTU Software Engineering Society</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-container">
+    <h2>Contact Me</h2>
+    <p>Contact#: <a href="tel:+923013666203">03013666203</a></p>
+    <p>Email: <a href="mailto:mahnoor.sarfraz20@gmail.com">mahnoor.sarfraz20@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mahnoor-sarfraz-988a81283" target="_blank">linkedin.com/in/mahnoor-sarfraz</a></p>
+    <p>GitHub: <a href="https://github.com/NoorSarfrazzz" target="_blank">github.com/NoorSarfrazzz</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Mahnoor. All rights reserved.</p>
+</footer>
+
+<script>
+  function showTab(tabId, event) {
+    document.querySelectorAll("#projects .tab-button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll("#projects .tab-content").forEach(content => content.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
+    event.currentTarget.classList.add("active");
+  }
+
+  function showAch(tabId, event) {
+    document.querySelectorAll("#achievements .tab-button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll("#achievements .tab-content").forEach(content => content.classList.remove("active"));
+    document.getElementById(tabId).classList.add("active");
+    event.currentTarget.classList.add("active");
+  }
+</script>
+
+</body>
 </html>
